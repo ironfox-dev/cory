@@ -13,7 +13,7 @@
           <div class="flex">
             <label class="main">
                 <input type="checkbox" checked="checked">
-                <!-- <span class="geekmark"></span> -->
+                <span class="geekmark"></span>
             </label>
             <div class="text-white ml-6">Remember Password</div>
           </div>
