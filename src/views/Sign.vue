@@ -11,7 +11,10 @@
         <input type="text" placeholder="Enter your password" class="p-4 text-white border-white border mt-2 w-full rounded bg-transparent border-solid">
         <div class="flex justify-between mt-6">
           <div class="flex">
-            <input type="checkbox" class="bg-custom mt-1.5" name="" id="">
+            <label class="main">
+                <input type="checkbox" checked="checked">
+                <span class="geekmark"></span>
+            </label>
             <div class="text-white ml-6">Remember Password</div>
           </div>
           <div class="text-white">Forget Password</div>
@@ -64,5 +67,54 @@ export default {
 }
 .color-custom {
   color: #91B539;
+}
+.main {
+    display: block;
+    position: relative;
+    padding-left: 45px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 20px;
+}
+  
+/* Hide the default checkbox */
+input[type=checkbox] {
+    visibility: hidden;
+}
+  
+.geekmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #91B539;
+    border-radius: 5px;
+}
+  
+.main input:checked ~ .geekmark {
+    background-color: #91B539;
+}
+  
+.geekmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+.main input:checked ~ .geekmark:after {
+    display: block;
+}
+  
+.main .geekmark:after {
+    left: 7px;
+    bottom: 5px;
+    width: 6px;
+    height: 10px;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 </style>
