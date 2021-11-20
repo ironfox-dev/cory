@@ -1,25 +1,27 @@
 <template>
-  <div class="w-screen h-screen bg-cover bg-img bg-no-repeat flex justify-end">
-    <div class="w-logo h-screen bg-gray-900 bg-opacity-90">
+  <div class="w-full h-full bg-cover bg-main bg-no-repeat flex justify-end">
+    <div class="w-logo h-screen bg-gray-900 bg-opacity-90 overflow-y-auto">
       <img src="../assets/Artboard.png" alt="logo" class="m-12" />
       <div class="text-white text-3xl ml-16 font-bold">Sign In</div>
-      <div class="ml-16 mr-20 mt-6">
+      <div class="ml-16 mr-16 mt-6">
         <div class="w-full h-px bg-white"></div>
         <div class="text-white mt-12">Email address*</div>
         <input type="text" placeholder="Enter email address" class="p-4 text-white border-white border mt-2 w-full rounded bg-transparent border-solid">
         <div class="text-white mt-6">Password*</div>
-        <input type="text" placeholder="Enter your password" class="p-4 text-white border-white border mt-2 w-full rounded bg-transparent border-solid">
+        <div class="flex">
+          <input type="text" placeholder="Enter your password" class="p-4 text-white w-4/5 border-white border mt-2 rounded bg-transparent border-solid rounded-r-none border-r-0">
+          <button class="p-4 text-white border-white border mt-2 w-1/5 rounded bg-transparent border-solid rounded-l-none border-l-0">Show</button>
+        </div>
         <div class="flex justify-between mt-6">
           <div class="flex">
-            <label class="main">
-                <input type="checkbox" checked="checked">
-                <span class="geekmark"></span>
+            <label class="main block cursor-pointer relative text-white pl-12 mb-4">Remember Password
+                <input type="checkbox" class="invisible" checked="checked">
+                <span class="geekmark  w-5 h-5 absolute top-0 left-0 bg-theme mt-0.5 rounded-md"></span>
             </label>
-            <div class="text-white ml-6">Remember Password</div>
           </div>
           <div class="text-white">Forget Password</div>
         </div>
-        <button class="bg-custom rounded w-full p-4 mt-10">Login</button>
+        <button class="bg-theme rounded w-full p-4 mt-10">Login</button>
         <div class="flex justify-between mt-10">
           <div class="w-2/5 h-px bg-white"></div>
           <div class="text-white -mt-3">Or</div>
@@ -32,8 +34,8 @@
             <img src="" alt="">
           </div>
         </button>
-        <div class="flex justify-center mt-24">
-          <div class="text-white">Don't have account: <span class="color-custom">Register Now</span></div>
+        <div class="flex justify-center my-20">
+          <div class="text-white">Don't have account: <span class="text-theme">Register Now</span></div>
         </div>
       </div>
     </div>
@@ -45,76 +47,5 @@
 
 export default {
   name: "Sign",
-  components: {
-  },
-  methods: {
-    
-  },
 };
 </script>
-<style>
-.bg-img {
-  background-image: url('../assets/bg.png');
-}
-.w-logo {
-  width: 593px;
-}
-::placeholder {
-  opacity: 1;
-}
-.bg-custom {
-  background: #91B539;
-}
-.color-custom {
-  color: #91B539;
-}
-.main {
-    display: block;
-    position: relative;
-    padding-left: 45px;
-    margin-bottom: 15px;
-    cursor: pointer;
-    font-size: 20px;
-}
-  
-/* Hide the default checkbox */
-input[type=checkbox] {
-    visibility: hidden;
-}
-  
-.geekmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    background-color: #91B539;
-    border-radius: 5px;
-}
-  
-.main input:checked ~ .geekmark {
-    background-color: #91B539;
-}
-  
-.geekmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-  
-.main input:checked ~ .geekmark:after {
-    display: block;
-}
-  
-.main .geekmark:after {
-    left: 7px;
-    bottom: 5px;
-    width: 6px;
-    height: 10px;
-    border: solid black;
-    border-width: 0 2px 2px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-</style>
